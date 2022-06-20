@@ -16,7 +16,7 @@ docker run \
 ```bash
 docker run \
     --name grafana-leo \
-    -d -p 3000:3000 grafana/grafana-oss:8.5.2
+    -d -p 3000:3000 grafana/grafana-oss
 ```
 
 <br>
