@@ -1,0 +1,10 @@
+groups:
+  - name: HeapMemoryHigh
+    rules:
+      - alert: HeapMemoryHigh
+        expr: (jvm_memory_used_bytes{area="heap"} / jvm_memory_max_bytes{area="heap"}) > 0.8
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Heap memory is more than 80% for 1 minute"

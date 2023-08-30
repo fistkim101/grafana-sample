@@ -1,0 +1,14 @@
+global:
+  slack_api_url: 'https://hooks.slack.com/services/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'
+
+route:
+#  group_by: ['HeapMemoryHigh', 'HighCpuUsage']
+  group_by: []
+  receiver: 'slack-notifications'
+
+receivers:
+  - name: 'slack-notifications'
+    slack_configs:
+      - channel: '#grmc-exception'
+        send_resolved: true
+        text: "{{ range .Alerts }}<!channel> *{{ .Annotations.summary }}*\n{{ end }}"
