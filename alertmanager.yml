@@ -9,6 +9,6 @@ route:
 receivers:
   - name: 'slack-notifications'
     slack_configs:
-      - channel: '#grmc-exception'
+      - channel: '#fitsquad-exception'
         send_resolved: true
         text: "{{ range .Alerts }}<!channel> *{{ .Annotations.summary }}*\n{{ end }}"
